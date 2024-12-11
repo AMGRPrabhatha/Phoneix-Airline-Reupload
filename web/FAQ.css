@@ -1,0 +1,63 @@
+
+gitgit <meta name="viewport" content="width=device-width, initial-scale=1">
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 16px;
+  padding-left: 10%;
+  padding-top: 80%;
+}
+
+imgg{
+
+    height: 100%;
+    width: 100%;
+}
+
+
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #eb8f3a;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #eb8f3a;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+

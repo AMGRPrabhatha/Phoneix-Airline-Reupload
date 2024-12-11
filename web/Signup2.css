@@ -1,0 +1,66 @@
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(photos/signup_new2.jpg);
+    background-size:cover;
+    /* padding-top:1200px; */
+    
+}
+
+#log
+{
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 0.2rem 1rem !important;
+    line-height: 30px;
+    margin-left: 10px;
+
+}
+#log:hover
+{
+    background-color: #B11336;
+    border: 2px solid #B11336;
+}
+#sign
+{
+    border: 2px solid #FD8202;
+    background-color: #FD8202;
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 0.2rem 1rem !important;
+    line-height: 30px;
+}
+
+.modal-header
+{
+    background-color: rgba(143, 40, 40, 0.473);
+}
+.modal-body
+{
+    background-color: rgba(143, 40, 40, 0.473);
+}
+
+.container
+{
+    color: rgb(255, 255, 255);
+}
+#topimg
+{
+    height: 25vh;
+    width: auto;
+    margin-left: 34%;
+}
+
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    
+}

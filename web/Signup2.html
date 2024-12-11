@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html>
+      <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Signup2.css">
+    
+    <title>Sign up</title>
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="get" class="lg">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+
+    <!-- Content -->
+    
+    <div class="container mt-5">
+      
+      <form action="RegServlet" method="post">
+
+      <fieldset style="display: block;" id="FFPAcc_reg">
+        <br><h3><strong>Staff-Personal Information</strong></h3><br>
+        <div class="row margin-top-10">
+            <div class="form-group">
+                
+                <!-- Staff id -->
+                <div class="row margin-top-10">
+                    <label class="col-sm-3 control-label">
+                      Staff ID<b style="color: red;">*</b>
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text" id="txtstaffID" name="Staff ID" class="form-control red-tooltip alpha-only" placeholder="ID" maxlength="30" 
+                        data-toggle="tooltip" data-placement="top" title="" data-original-title="To ensure automatic credit of FlySmiLes, your airlines reservation 
+                        should be made in this (name as on your passport)">
+                        <span class="red_star" style="color: red;" id="errfname"></span>
+                      </div>
+                       <span style="color: red;" ></span>
+               
+                </div>
+                <br>
+
+                <!-- staff grade -->
+                <div class="row margin-top-10">
+                  <label class="col-sm-3 control-label">
+                    Staff Grade<b style="color: red;">*</b>
+                  </label>
+                  <div class="col-sm-5">
+                    <select class="form-control" id="ddlcountryofres" name="countryofres" onchange="loadCities();"><option value="">Select  the staff Grade</option>
+                      <option value="S1">Staff 01</option>
+                      <option value="S2">Staff 02</option>
+                    </select>
+                  </div>  
+                </div> 
+                <br> 
+
+                <!-- Staff Position -->
+                <div class="row margin-top-10">
+                  <label class="col-sm-3 control-label">
+                    Position<b style="color: red;">*</b><br>As on your ID
+                  </label>
+                  <div class="col-sm-5">
+                    <input type="text" id="txtfirstname" name="familyfirstname" class="form-control red-tooltip alpha-only" 
+                    placeholder="Enter the Position here" maxlength="30" data-toggle="tooltip" data-placement="top" title="" 
+                    data-original-title="To ensure automatic credit of FlySmiLes, your airlines reservation should be made in this (name as on your passport)">
+                    <span style="color: red;" id="errfname"></span>
+                  </div>
+                </div>
+                <br>
+                                <!-- Staff Name -->
+                <div class="row margin-top-10">
+                    <label class="col-sm-3 control-label">
+                      Full Name<b style="color: red;">*</b>
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text" id="txtstaffID" name="Staff ID" class="form-control red-tooltip alpha-only" placeholder="Enter Your Name " maxlength="30" 
+                        data-toggle="tooltip" data-placement="top" title="" data-original-title="To ensure automatic credit of FlySmiLes, your airlines reservation 
+                        should be made in this (name as on your passport)">
+                        <span class="red_star"style="color: red;" id="errfname"></span>
+                      </div>
+                       <span style="color: red;" ></span>
+               
+                </div>
+                <br>
+                
+                <!-- Gender -->
+                <div class="row margin-top-10">
+                  <label class="col-sm-3 control-label">
+                    Gender<b style="color: red;">*</b>
+                  </label>
+                  <div class="col-sm-5">
+                    <div class="col-sm-5">
+                      <table width="100%" border="0" style="padding: 10px; background:transparent;">
+                          <tbody>
+                            <tr>
+                              <td width="5%">
+                               <input type="radio" class="searchType" id="genderMale" name="gender" value="M" checked="checked">Male
+                              </td>
+                              <td width="5%">
+                                <input type="radio" class="searchType" id="genderFemale" name="gender" value="F">Female
+                              </td>
+                            </tr>
+                          </tbody>
+                      </table><span style="color: red;" id="errgender"></span>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                
+               <!-- nationality -->
+               <div class="row margin-top-10">
+                  <label class="col-sm-3 control-label">
+                    Nationality<b style="color: red;">*</b>
+                  </label>
+                  <div class="col-sm-5">
+                    <select class="form-control" id="ddlnationality" name="nationality"><option value="">Select Nationality</option>
+                      <option value="AF">Sinhala</option>
+                      <option value="AL">Tamil</option>
+                      <option value="DZ">Muslim</option>
+                      <option value="AS">Burgher</option>
+                      
+                      </select>
+                      
+                  </div>
+                </div>
+                <br> 
+
+                <div class="row margin-top-10">
+                    <div class="form-group">
+                      <div class="row margin-top-10">
+                          <label class="col-sm-3 control-label">
+                              Date of Birth<b style="color: red;">*</b>
+                          </label>
+                          <div class="col-sm-5">
+                              <input type="date" name="dob"  placeholder="dateofbirth" class="form-control">
+                              <span style="color: red;" ></span>
+                          </div>
+                      </div><br>
+       
+                      <!-- Registered Date -->
+                      <div class="row margin-top-10">
+                        <label class="col-sm-3 control-label">
+                          Registered Date<b style="color: red;">*</b><br>
+                       </label>
+                          <div class="col-sm-5">
+                            <input type="date" name="dob"  placeholder="Registered Date" class="form-control">
+                              <span style="color: red;" ></span>
+                          </div>
+                      </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                                <!-- Civil Status -->
+            <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Civil Status<b style="color: red;">*</b>
+                </label>
+              <div class="col-sm-5">
+                  <select class="form-control" id="ddlnationality" name="nationality"><option value="">Select status</option>
+                    <option value="AF">Married</option>
+                    <option value="AL">Unmarried</option>
+                    
+                  </select>
+                
+              </div>
+            </div>
+            
+            <br>
+            <br>
+            <br>
+
+
+        <h3><strong>Contact Information</strong></h3><br>
+
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              <br>
+          
+
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Phone number<b style="color: red;">*</b>
+              </label>
+                  <div class="col-sm-2">
+                    <select id="ddlteltype" name="teltype" class="form-control" >
+                      <option value="" disabled="" selected="" hidden="">Select Phone</option>
+                      <option value="MOBIL">Mobile</option>
+                      <option value="HOME">Home</option>
+                      <option value="WORK">Work</option>
+                    </select>
+                    
+                      <span style="color: red;" id="errexpiredate"></span>
+                  </div>
+                  <div class="col-sm-3">
+                    <input  type="text" id="txttelno" name="telno" maxlength="20" class="form-control">
+                    <span style="color: red;" id="errtelcountycode"></span>
+                </div>
+                
+              </div>
+          </div>
+        </div><br>
+        
+
+        
+        <div class="row margin-top-10">
+            <div class="form-group">
+                <label class="col-sm-8 control-label">
+                    Your email
+                </label>
+                <br>
+                <div class="row margin-top-10">
+                    <label class="col-sm-3 control-label">
+                        Office email<b style="color: red;">*</b>
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text" id="txtemail" name="email" placeholder="Please Enter Your personal staff mail address" maxlength="200" class="form-control">
+                        <span style="color: red;" id="erremail"></span>
+                    </div>
+                </div><br>
+
+                <div class="row margin-top-10">
+                    <label class="col-sm-3 control-label">
+                        Confirm Email Address<b style="color: red;">*</b>
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text" id="txtemailcon" name="txtemailcon" placeholder="Confirm Email Address" onblur="emailCheck();" maxlength="200" class="form-control">
+                        <span style="color: red;" id="erremailcon"></span>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              <br>
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  <strong>Permanent Residance Address</strong>
+              </label>
+                  
+              </div>
+          </div>
+        </div>
+
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              <br>
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+              </label>
+                  
+              </div><br>
+
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Address Line 1<b style="color: red;">*</b>
+              </label>
+                  <div class="col-sm-5">
+                    <input type="text" id="txtadd1" name="add1" placeholder="Address Line 1" class="form-control">
+                    <span style="color: red;" id="erradd1"></span>
+                  </div>
+              </div>
+          </div>
+        </div><br>
+        
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Address Line 2
+              </label>
+                  <div class="col-sm-5">
+                    <input type="text" id="txtadd2" name="add2" placeholder="Address Line 2" class="form-control">
+                    <span style="color: red;" id="erradd2"></span>
+                  </div>
+              </div><br>
+
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Address Line 3
+              </label>
+                  <div class="col-sm-5">
+                    <input type="text" id="txtadd3" name="add3" placeholder="Address Line 3" class="form-control">
+                    <span style="color: red;" id="erradd3"></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <br>
+       
+
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Town/City<b style="color: red;">*</b>
+              </label>
+                  <div class="col-sm-5">
+                    
+                  <select  class="form-control" name="city">
+
+                      <option value="1">Select City</option>
+                      <option value="Ahungalla">Ahungalla </option>
+                      <option value="Akuressa">Akuressa </option>  
+                      <option value="Aluthgama">Aluthgama </option>
+                      <option value="Ambalangoda">Ambalangoda </option>
+                      <option value="Ambalanthota">Ambalanthota </option>
+                      <option value="Ampara">Ampara </option>
+                      <option value="Anuradapura">Anuradapura </option>
+                      <option value="Balangoda">Balangoda </option>
+                      <option value="Bandarawela">Bandarawela </option>
+                      <option value="Baticaloa">Baticaloa </option>
+                      <option value="Belihuloya">Belihuloya </option>
+                      <option value="Bentota">Bentota </option>
+                      <option value="Beruwela">Beruwela </option>
+                      <option value="Colombo" selected="">Colombo </option>
+                      <option value="Dambulla">Dambulla </option>
+                      <option value="Dehiwala">Dehiwala </option>
+                      <option value="Dematagoda">Dematagoda </option>
+                      <option value="Deniyaya">Deniyaya </option>   
+                      <option value="Dikwella">Dikwella </option>
+                      <option value="Ella">Ella </option>
+                      <option value="Embilipitiya">Embilipitiya </option>
+                      <option value="Galle">Galle </option>
+                      <option value="Gampaha">Gampaha </option>
+                      <option value="Gampola">Gampola </option>
+                      <option value="Habaraduwa">Habaraduwa </option>
+                      <option value="Habarana">Habarana </option>
+                      <option value="Hambantota">Hambantota </option>
+                      <option value="Haputale">Haputale </option>
+                      <option value="Hatton">Hatton </option>
+                      <option value="Hikkaduwa">Hikkaduwa </option>
+                      <option value="Horana">Horana </option>
+                      <option value="Ja Ela">Ja Ela </option>
+                      <option value="Jaffna">Jaffna </option>
+                      <option value="Kalmunai">Kalmunai </option>
+                      <option value="Kalutara">Kalutara </option>
+                      <option value="Kandy">Kandy </option>
+                      <option value="Kantale">Kantale </option>
+                      <option value="Kattankudy">Kattankudy </option>
+                      <option value="Katunayake">Katunayake </option>
+                      <option value="Kegalle">Kegalle </option>
+                      <option value="Kelaniya">Kelaniya </option>
+                      <option value="Kesbawa">Kesbawa </option>
+                      <option value="Kilinochchi">Kilinochchi </option>
+                      <option value="Kitulgala">Kitulgala </option>
+                      <option value="Koggala">Koggala </option>
+                      <option value="Kolonnawa">Kolonnawa </option>
+                      <option value="Kotmale">Kotmale</option>
+                      <option value="Kotte">Kotte </option>
+                      <option value="Kurunegala">Kurunegala </option>
+                      <option value="Mannar">Mannar </option>
+                      <option value="Marawila">Marawila </option>
+                      <option value="Matale">Matale </option>
+                      <option value="Matara">Matara </option>
+                      <option value="Matugama">Matugama </option>
+                      <option value="Mawanella">Mawanella </option>
+                      <option value="Mihintale">Mihintale </option>
+                      <option value="Minnariya">Minnariya </option>
+                      <option value="Mirigama">Mirigama </option>
+                      <option value="Moratuwa">Moratuwa </option>
+                      <option value="Mount Laviniya">Mount Laviniya </option>
+                      <option value="Nawalapitiya">Nawalapitiya </option>
+                      <option value="Negombo">Negombo </option>
+                      <option value="Nuwara Eliya ">Nuwara Eliya </option>
+                      <option value="Panadura">Panadura </option>
+                      <option value="Peradeniya">Peradeniya </option>
+                      <option value="Polonnaruwa ">Polonnaruwa </option>
+                      <option value="Pottuvil">Pottuvil </option>
+                      <option value="Pussellawa">Pussellawa </option>
+                      <option value="Puttalam">Puttalam </option>
+                      <option value="Rajagiriya">Rajagiriya </option>
+                      <option value="Ratnapura ">Ratnapura </option>
+                      <option value="Sigiriya">Sigiriya </option>
+                      <option value="Tangalla">Tangalla </option>  
+                      <option value="Tissamaharama">Tissamaharama </option>
+                      <option value="Trincomalee">Trincomalee </option>
+                      <option value="Vavuniya">Vavuniya </option>
+                      <option value="Veyangoda">Veyangoda </option>
+                      <option value="Wattala">Wattala </option>
+                      <option value="Weligama">Weligama </option>
+                      <option value="Yakkala">Yakkala </option>
+
+                    </select>
+                  <span style="color: red;" id="errcity"></span>
+                  </div>
+              </div>
+          </div>
+        </div><br>
+
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              <br>
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  County/State
+              </label>
+                  <div class="col-sm-5">
+                    <input type="text"  name="State" placeholder="County/State" class="form-control" >
+                    <span style="color: red;" id="errstate"></span>
+                  </div>
+              </div><br>
+
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Postcode/Zip
+              </label>
+                  <div class="col-sm-5">
+                    <input type="text" id="txtZip" name="Zip" placeholder="Postcode/Zip" class="form-control" >
+                    <span style="color: red;" id="errpobox"></span>
+                  </div>
+              </div>
+          </div>
+        </div><br>
+
+        <!-- NEW -->
+        <div class="row margin-top-10">
+
+            <h3><strong>Your login details</strong></h3>
+
+        </div>
+        <div class="row margin-top-10">
+
+            <div class="alert alert-info col-sm-8" style="color: #071136 ; background-color: #9f9797 ; border-color: #9f9797; margin-left: 15px;width: 64%;">
+                Your password  must consist of 8 characters using at least one lower case alphabet (a-z) and one digit (0-9)
+            </div>
+        </div>
+
+        <div class="row margin-top-10">
+          <div class="form-group">
+            
+              <br>
+              <div class="row margin-top-10">
+                <label class="col-sm-3 control-label">
+                  Password<b style="color: red;">*</b>
+              </label>
+                  <div class="col-sm-5">
+                    <input type="password" id="txtpasswordreg" name="txtpasswordreg" placeholder="Password" maxlength="8" class="form-control">
+                    <span style="color: red;" id="errpassword"></span>
+                  </div>
+              </div><br>
+
+              <div class="row margin-top-10">
+                
+                <label class="col-sm-3 control-label">
+                  Confirm Password<b style="color: red;">*</b>
+                </label>
+
+                  <div class="col-sm-5">
+                    <input type="password" id="txtpasswordcon" name="txtpasswordcon" placeholder="Confirm Password" maxlength="8" class="form-control">
+                    <span style="color: red;" id="errpasswordcon"></span>
+                  </div>
+              </div>
+          </div>
+
+        </div><br>
+        
+         
+        
+        <div id="subs">
+            <br>
+            <br>
+            <div class="row margin-top-10">
+
+                <div class="col-sm-12">
+                  
+                    <input type="checkbox" id="chkAgree" name="chkAgree">I hereby declare that the information given above 
+                    is true and accurate..
+
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row margin-top-10">
+
+          <div class="col-sm-12">
+              <input type="checkbox" id="chkAgree" name="chkAgree">  I understand and accept the 
+              <a href="" target="_blank">terms and conditions</a> of the FlySmiLes frequent flyer programme.
+          </div>
+      </div>
+      <br>
+      <input type="submit" class="btn btn-danger" value="Join Now" id="getButtonValue" name="btnJoin" style="background-color:#B44620;border-color:#B44620" onclick="submitValues()">
+        
+
+        
+        <div id="loadingmsg" style="color: green; display: none">
+            Registering...
+            <img src="/flysmiles/images/pages/Loading.gif" alt="loading">
+        </div>
+        <div id="msg" style="color:Green;">
+        </div>
+        <div id="errormsg" class="red_star">
+        </div>
+    </fieldset>
+  </form>
+
+  </div>
+    <hr class="featurette-divider">
+    
+
+      </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+    "elements": {
+        "ion-icon": {},
+        "title": {}
+    },
+    "attributes": {
+        "charset": {
+            "context": "meta"
+        },
+        "integrity": {
+            "context": "link"
+        },
+        "name": {
+            "context": "meta"
+        },
+        "http-equiv": {
+            "context": "meta"
+        },
+        "nomodule": {
+            "context": "script"
+        }
+    }
+}
